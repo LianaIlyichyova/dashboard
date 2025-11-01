@@ -1,4 +1,5 @@
 import Card from "@components/Card";
+import Title from "@components/Title";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -14,16 +15,12 @@ import {
   StyledChartContainer,
   StyledContainer,
 } from "./Sales.styles";
-import Title from "@components/Title";
+
 import { colors } from "@styles/constants";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
 
-const mockData = {
-  sales: "52,345",
-  chartData: [55, 70, 45, 65, 75, 85, 60, 100, 50, 20],
-  description: "The languages only differ grammar The languages only ",
-};
+import { mockData } from "@data/sales";
 
 const options = {
   plugins: {

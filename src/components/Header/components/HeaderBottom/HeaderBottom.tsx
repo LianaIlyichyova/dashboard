@@ -1,10 +1,11 @@
+import { Breadcrumb } from "antd";
+import MiniBarChart from "@components/MiniBarChart";
+
 import { StyledSection } from "@components/Header/Header.styles";
 import StyledHeaderBottom, {
   StyledRightSection,
   StyledTitle,
 } from "./HeaderBottom.styles";
-import MiniBarChart from "@components/MiniBarChart";
-import { Breadcrumb } from "antd";
 
 function HeaderBottom() {
   return (

@@ -1,4 +1,7 @@
 import Card from "@components/Card";
+import Title from "@components/Title";
+
+import { Tag, Avatar } from "antd";
 import {
   Row,
   Cell,
@@ -10,11 +13,7 @@ import {
   UserCell,
 } from "@components/Reports/Reports.styles";
 
-import { Tag, Avatar } from "antd";
-
-import Title from "@components/Title";
-
-import { mockOrders } from "@components/Reports/mockData";
+import { mockOrders } from "@data/reports";
 
 function Orders() {
   return (

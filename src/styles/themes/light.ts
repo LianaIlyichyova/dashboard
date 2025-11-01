@@ -32,7 +32,7 @@ const light = {
     },
     Input: {
       colorBgBase: colors.white,
-      colorBorder: colors.colorTextSecondary,
+      colorBorder: colors.colorBgSecondary,
       colorText: colors.colorTextSecondary,
       colorTextPlaceholder: colors.colorTextSecondaryDark,
       activeBorderColor: colors.colorBgSecondary,

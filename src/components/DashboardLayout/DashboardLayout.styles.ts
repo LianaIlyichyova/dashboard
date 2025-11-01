@@ -1,6 +1,6 @@
-import { spacings } from "@styles/constants";
-import { Layout } from "antd";
 import styled from "styled-components";
+import { Layout } from "antd";
+import { spacings } from "@styles/constants";
 
 const StyledLayout = styled(Layout)`
   display: flex;
@@ -14,7 +14,7 @@ const StyledLayoutBody = styled.main`
   gap: ${spacings.xl};
   padding: ${spacings.xl} ${spacings.xxl};
 
-  background-color: ${({ theme }) => theme.token.colorPrimaryBg || "#0f172a"};
+  background-color: ${({ theme }) => theme.token.colorBgBase};
   overflow: auto;
 
   @media (max-width: 768px) {

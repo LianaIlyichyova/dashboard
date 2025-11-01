@@ -1,18 +1,18 @@
 import { Switch } from "antd";
 import { MoonOutlined, SunOutlined } from "@ant-design/icons";
-
-import { useTheme } from "@contexts/ThemeContext";
 import { StyledThemeToggleWrapper } from "./ThemeToggle.styles";
 
-const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
+interface ThemeToggleProps {
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
+}
 
+const ThemeToggle = ({ checked, onChange }: ThemeToggleProps) => {
   return (
     <StyledThemeToggleWrapper>
       <Switch
-        checked={isDark}
-        onChange={(checked) => toggleTheme(checked ? "dark" : "light")}
+        checked={checked}
+        onChange={onChange}
         checkedChildren={<MoonOutlined />}
         unCheckedChildren={<SunOutlined />}
       />

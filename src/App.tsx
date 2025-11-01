@@ -1,5 +1,4 @@
 import { ConfigProvider, App as AntdApp } from "antd";
-import ThemeToggle from "@components/ThemeToggle";
 import GlobalCSSStyles from "@styles/globalStyles";
 import baseTokens from "@styles/baseTokens";
 import themes from "./styles/themes";
@@ -7,15 +6,18 @@ import {
   ThemeProvider as StyledThemeProvider,
   type DefaultTheme,
 } from "styled-components";
-import { ThemeProvider, useTheme } from "@contexts/ThemeContext";
+import { SettingsProvider, useSettings } from "@contexts/SettingsContext";
 import type { ThemeType } from "./styles/constants";
 import DashboardLayout from "@components/DashboardLayout";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 
 const AppContent = () => {
-  const { theme: currentTheme } = useTheme();
-  const baseTheme = themes[currentTheme as ThemeType];
+  const { settings } = useSettings();
+
+  const currentTheme: ThemeType = (settings?.theme as ThemeType) || "light";
+
+  const baseTheme = themes[currentTheme];
   const antdTheme = {
     token: { ...baseTokens.token, ...baseTheme.token },
     components: { ...baseTheme.components, ...baseTokens.components },
@@ -31,7 +33,6 @@ const AppContent = () => {
         >
           <Header />
           <DashboardLayout />
-          <ThemeToggle />
           <Footer />
         </AntdApp>
       </StyledThemeProvider>
@@ -41,9 +42,9 @@ const AppContent = () => {
 
 function App() {
   return (
-    <ThemeProvider>
+    <SettingsProvider>
       <AppContent />
-    </ThemeProvider>
+    </SettingsProvider>
   );
 }
 

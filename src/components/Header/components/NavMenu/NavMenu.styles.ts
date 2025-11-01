@@ -1,5 +1,5 @@
-import { colors, fontSizes, spacings } from "@styles/constants";
 import styled from "styled-components";
+import { colors, fontSizes, spacings } from "@styles/constants";
 
 const Container = styled.div`
   padding: 0 ${spacings.xxl};

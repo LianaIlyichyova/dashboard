@@ -84,6 +84,10 @@ const GlobalCSSStyles = createGlobalStyle`
     font-size: ${fontSizes.m};
     font-weight: 600;
   }
+
+  .ant-select .ant-select-arrow {
+    color: ${({ theme }) => theme.token.colorTextPrimary};
+  }
 `;
 
 export default GlobalCSSStyles;

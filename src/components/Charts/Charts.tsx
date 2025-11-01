@@ -1,4 +1,7 @@
 import ChartCard from "./components/ChartCard";
+
+import { colors, fontSizes } from "@styles/constants";
+import { useTheme } from "styled-components";
 import { Doughnut, Line, Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -13,8 +16,6 @@ import {
 } from "chart.js";
 
 import StyledCharts from "./Charts.styles";
-import { colors, fontSizes } from "@styles/constants";
-import { useTheme } from "styled-components";
 
 ChartJS.register(
   ArcElement,
@@ -112,7 +113,6 @@ export default function DashboardCharts() {
 
   return (
     <StyledCharts>
-      {/* Donut Chart */}
       <ChartCard
         title="Monthly Earnings"
         marketplaceValue="$56241"

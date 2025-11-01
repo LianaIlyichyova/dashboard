@@ -1,10 +1,8 @@
-import { spacings } from "@styles/constants";
 import styled from "styled-components";
+import { spacings } from "@styles/constants";
 
 const StyledThemeToggleWrapper = styled.div`
-  position: fixed;
-  bottom: ${spacings.m};
-  right: ${spacings.m};
+  width: max-content;
   z-index: 9999;
   background: ${({ theme }) => theme.token.colorBgCard};
   border-radius: 8px;

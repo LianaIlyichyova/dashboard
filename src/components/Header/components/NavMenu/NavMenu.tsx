@@ -1,4 +1,6 @@
-"use client";
+import { useEffect, useState } from "react";
+import { Dropdown, Menu } from "antd";
+import Card from "@components/Card";
 
 import {
   DashboardOutlined,
@@ -9,10 +11,7 @@ import {
   PieChartOutlined,
   FileOutlined,
 } from "@ant-design/icons";
-import { Dropdown, Menu } from "antd";
-import { useEffect, useState } from "react";
 
-import Card from "@components/Card";
 import { NavItem, NavList, NavLink, Container } from "./NavMenu.styles";
 
 const navItems = [

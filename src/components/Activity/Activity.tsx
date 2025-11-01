@@ -9,7 +9,6 @@ function Activity() {
   return (
     <StyledActivity>
       <InboxCard />
-
       <Timeline />
       <StyledThirdColumn>
         <Feedback />

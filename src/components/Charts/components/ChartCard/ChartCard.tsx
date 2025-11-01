@@ -1,8 +1,8 @@
 import { type ReactNode } from "react";
-import { StatGrid } from "./ChartCard.styles";
 import Card from "@components/Card";
 import Title from "@components/Title";
 
+import { StatGrid } from "./ChartCard.styles";
 interface ChartCardProps {
   title: string;
   marketplaceValue: string;

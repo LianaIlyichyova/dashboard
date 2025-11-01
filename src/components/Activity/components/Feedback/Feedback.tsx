@@ -1,3 +1,6 @@
+import { Avatar } from "antd";
+import { CommentOutlined } from "@ant-design/icons";
+
 import Card from "@components/Card";
 import {
   StyledText,
@@ -5,15 +8,8 @@ import {
   StyledName,
   StyledRole,
 } from "./Feedback.styles";
-import { CommentOutlined } from "@ant-design/icons";
-import { Avatar } from "antd";
 
-const mockData = {
-  text: "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe the same vocabulary. The languages only in their grammar.",
-  name: "Marie Minnick",
-  image: "https://randomuser.me/api/portraits/women/44.jpg",
-  role: "Marketing Manager",
-};
+import { mockData } from "@data/feedback";
 
 function Feedback() {
   return (

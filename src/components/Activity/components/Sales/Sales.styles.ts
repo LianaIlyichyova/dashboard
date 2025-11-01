@@ -1,5 +1,5 @@
-import { fontSizes, spacings } from "@styles/constants";
 import styled from "styled-components";
+import { fontSizes, spacings } from "@styles/constants";
 
 const StyledContainer = styled.div`
   display: flex;

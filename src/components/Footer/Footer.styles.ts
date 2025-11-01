@@ -1,6 +1,5 @@
-import { spacings } from "@styles/constants";
 import styled from "styled-components";
-import { colors } from "@styles/constants";
+import { colors, spacings } from "@styles/constants";
 
 const StyledFooter = styled.footer`
   display: block;

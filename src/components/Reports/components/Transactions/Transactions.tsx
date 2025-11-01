@@ -1,4 +1,9 @@
 import Card from "@components/Card";
+import Title from "@components/Title";
+
+import { Tag, Avatar } from "antd";
+
+import { mockTransactions } from "@data/reports";
 import {
   Row,
   Cell,
@@ -7,11 +12,6 @@ import {
   StatusCell,
   UserCell,
 } from "@components/Reports/Reports.styles";
-
-import { Tag, Avatar } from "antd";
-
-import { mockTransactions } from "@components/Reports/mockData";
-import Title from "@components/Title";
 
 function Transactions() {
   return (

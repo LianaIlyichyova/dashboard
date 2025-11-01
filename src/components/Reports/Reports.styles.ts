@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors, fontSizes, spacings } from "@styles/constants";
 
-export const Container = styled.div`
+export const Container = styled.section`
   display: grid;
   gap: ${spacings.l};
   grid-template-columns: 1fr 1fr;
@@ -11,13 +11,6 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-`;
-
-export const HeaderCell = styled.div<{ width: string }>`
-  width: ${(props) => props.width};
-  font-size: ${fontSizes.s};
-  font-weight: 500;
-  flex-shrink: 0;
 `;
 
 export const Row = styled.div`

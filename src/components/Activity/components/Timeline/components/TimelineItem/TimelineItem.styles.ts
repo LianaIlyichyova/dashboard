@@ -1,5 +1,5 @@
-import { spacings } from "@styles/constants";
 import styled from "styled-components";
+import { spacings } from "@styles/constants";
 
 const TRIANGLE_SIZE = "10px";
 

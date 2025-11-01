@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   StyledHeaderTop,
   IconButton,
@@ -7,14 +9,25 @@ import {
   StyledSearch,
 } from "./HeaderTop.styles";
 import { StyledSection } from "@components/Header/Header.styles";
-import { Badge, Avatar } from "antd";
+import { Badge, Avatar, Drawer } from "antd";
 import {
   BellOutlined,
   SettingOutlined,
   FullscreenOutlined,
 } from "@ant-design/icons";
+import Settings from "@components/Settings";
 
 function HeaderTop() {
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <StyledHeaderTop>
       <StyledSection>
@@ -41,9 +54,18 @@ function HeaderTop() {
         />
 
         <RotateIcon>
-          <SettingOutlined />
+          <SettingOutlined onClick={showDrawer} />
         </RotateIcon>
       </StyledSection>
+
+      <Drawer
+        title="Settings"
+        closable={{ "aria-label": "Close Button" }}
+        onClose={onClose}
+        open={open}
+      >
+        <Settings />
+      </Drawer>
     </StyledHeaderTop>
   );
 }

@@ -1,7 +1,7 @@
-import { Container } from "./Reports.styles";
-
 import Orders from "./components/Orders";
 import Transactions from "./components/Transactions";
+
+import { Container } from "./Reports.styles";
 
 function Reports() {
   return (

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { spacings } from "@styles/constants";
 
-const StyledCardContainer = styled.div`
+const StyledCardContainer = styled.article`
   background-color: ${({ theme }) => theme.token.colorBgCard};
   padding: ${spacings.l};
   border-radius: ${spacings.borderRadius};
