@@ -1,6 +1,5 @@
 import ChartCard from "./components/ChartCard";
 import { Doughnut, Line, Bar } from "react-chartjs-2";
-
 import {
   Chart as ChartJS,
   ArcElement,
@@ -14,7 +13,7 @@ import {
 } from "chart.js";
 
 import StyledCharts from "./Charts.styles";
-import { colors } from "@styles/constants";
+import { colors, fontSizes } from "@styles/constants";
 import { useTheme } from "styled-components";
 
 ChartJS.register(
@@ -32,8 +31,8 @@ const donutChartData = {
   datasets: [
     {
       data: [350, 450, 100],
-      backgroundColor: ["rgba(13, 202, 240", "#7A6FBE", "#2A3142"],
-      borderColor: colors.colorTextTertiary,
+      backgroundColor: ["rgba(13, 202, 240, 0.8)", "#7A6FBE", "#2A3142"],
+      borderColor: "rgba(255, 255, 255, 0.1)",
       borderWidth: 2,
     },
   ],
@@ -46,31 +45,29 @@ const areaChartData = {
     {
       label: "Series A",
       data: [0, 60, 100, 40, 180, 120, 0],
-      borderColor: "rgba(52, 195, 143)",
-      backgroundColor: "rgba(52, 195, 143)",
+      borderColor: "rgba(52, 195, 143, 1)",
+      backgroundColor: "rgba(52, 195, 143, 0.2)",
       fill: true,
       tension: 0.4,
       pointRadius: 0,
       borderWidth: 2,
     },
-
     {
       label: "Series B",
       data: [0, 40, 80, 20, 160, 80, 0],
-      borderColor: "rgba(122, 111, 190)",
-      backgroundColor: "rgba(122, 111, 190)",
+      borderColor: "rgba(122, 111, 190, 1)",
+      backgroundColor: "rgba(122, 111, 190, 0.2)",
       fill: true,
       tension: 0.4,
       pointRadius: 0,
       borderWidth: 2,
     },
-
     {
       label: "Series C",
       data: [0, 80, 120, 60, 240, 160, 0],
-      borderColor: "rgba(13, 202, 240",
-      backgroundColor: "rgba(13, 202, 240",
-      fill: "start",
+      borderColor: "rgba(13, 202, 240, 1)",
+      backgroundColor: "rgba(13, 202, 240, 0.2)",
+      fill: true,
       tension: 0.4,
       pointRadius: 0,
       borderWidth: 2,
@@ -97,23 +94,25 @@ const barChartData = {
     {
       label: "Marketplace",
       data: [60, 70, 80, 90, 75, 65, 85, 95, 70, 80, 90, 70],
-      borderColor: colors.colorTextTertiary,
-      backgroundColor: "rgba(13, 202, 240",
+      backgroundColor: "rgba(13, 202, 240, 0.6)",
+      borderColor: colors.colorTextSecondary,
     },
-
     {
       label: "Total Income",
       data: [100, 110, 105, 120, 115, 100, 95, 105, 120, 110, 100, 115],
-      borderColor: colors.colorTextTertiary,
-      backgroundColor: colors.white,
+      backgroundColor: "rgba(255, 255, 255, 0.3)",
+      borderColor: colors.colorTextSecondary,
     },
   ],
 };
 
 export default function DashboardCharts() {
   const theme = useTheme();
+  const labelColor = theme.token.colorTextPrimary;
+
   return (
     <StyledCharts>
+      {/* Donut Chart */}
       <ChartCard
         title="Monthly Earnings"
         marketplaceValue="$56241"
@@ -122,16 +121,31 @@ export default function DashboardCharts() {
         <div style={{ height: 250 }}>
           <Doughnut
             data={donutChartData}
-            options={{ maintainAspectRatio: false }}
+            options={{
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  labels: {
+                    color: labelColor,
+                  },
+                },
+              },
+            }}
           />
         </div>
         <div
-          style={{ marginTop: "2rem", fontSize: "14px", textAlign: "center" }}
+          style={{
+            marginTop: "2rem",
+            fontSize: fontSizes.m,
+            textAlign: "center",
+            color: labelColor,
+          }}
         >
           <p>Download Sales | In-Store Sales | Mail-Order Sales</p>
         </div>
       </ChartCard>
 
+      {/* Area (Line) Chart */}
       <ChartCard
         title="Email Sent"
         marketplaceValue="$89425"
@@ -145,9 +159,18 @@ export default function DashboardCharts() {
             options={{
               maintainAspectRatio: false,
               scales: {
-                x: { grid: { display: false } },
+                x: {
+                  grid: { display: false },
+                  ticks: { color: labelColor },
+                },
                 y: {
                   grid: { color: theme.token.colorText, lineWidth: 0.5 },
+                  ticks: { color: labelColor },
+                },
+              },
+              plugins: {
+                legend: {
+                  labels: { color: labelColor },
                 },
               },
             }}
@@ -155,6 +178,7 @@ export default function DashboardCharts() {
         </div>
       </ChartCard>
 
+      {/* Bar Chart */}
       <ChartCard
         title="Monthly Earnings"
         marketplaceValue="$2548"
@@ -176,17 +200,21 @@ export default function DashboardCharts() {
             options={{
               maintainAspectRatio: false,
               scales: {
-                x: { stacked: true, grid: { display: false } },
+                x: {
+                  stacked: true,
+                  grid: { display: false },
+                  ticks: { color: labelColor },
+                },
                 y: {
                   stacked: true,
-                  grid: {
-                    color: theme.token.colorText,
-                    lineWidth: 0.5,
-                  },
+                  grid: { color: theme.token.colorText, lineWidth: 0.5 },
+                  ticks: { color: labelColor },
                 },
               },
               plugins: {
-                legend: { display: false },
+                legend: {
+                  labels: { color: labelColor },
+                },
               },
             }}
           />

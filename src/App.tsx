@@ -1,6 +1,6 @@
 import { ConfigProvider, App as AntdApp } from "antd";
 import ThemeToggle from "@components/ThemeToggle";
-import CSSResetStyles from "@styles/css-reset";
+import GlobalCSSStyles from "@styles/globalStyles";
 import baseTokens from "@styles/baseTokens";
 import themes from "./styles/themes";
 import {
@@ -25,7 +25,7 @@ const AppContent = () => {
   return (
     <ConfigProvider theme={antdTheme}>
       <StyledThemeProvider theme={styledTheme}>
-        <CSSResetStyles />
+        <GlobalCSSStyles />
         <AntdApp
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >

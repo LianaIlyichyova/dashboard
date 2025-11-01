@@ -1,6 +1,5 @@
 import Card from "@components/Card";
 import {
-  Title,
   Row,
   Cell,
   OrderId,
@@ -9,17 +8,18 @@ import {
   EditButton,
   StatusCell,
   UserCell,
-  Date,
 } from "@components/Reports/Reports.styles";
 
 import { Tag, Avatar } from "antd";
+
+import Title from "@components/Title";
 
 import { mockOrders } from "@components/Reports/mockData";
 
 function Orders() {
   return (
     <Card>
-      <Title>Latest Orders</Title>
+      <Title color="light">Latest Orders</Title>
 
       {mockOrders.map((order, index) => (
         <Row key={`${order.id}-${index}`}>
@@ -42,7 +42,7 @@ function Orders() {
             <Amount>{order.amount}</Amount>
           </Cell>
           <Cell width="15%">
-            <Date>{order.date}</Date>
+            <p>{order.date}</p>
           </Cell>
           <Cell width="15%">
             <EditButton>Edit</EditButton>

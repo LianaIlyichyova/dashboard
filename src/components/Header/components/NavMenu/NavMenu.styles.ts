@@ -1,4 +1,4 @@
-import { spacings } from "@styles/constants";
+import { colors, fontSizes, spacings } from "@styles/constants";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -45,24 +45,25 @@ const NavLink = styled.a<{ active?: boolean }>`
   justify-content: center;
   gap: 8px;
   padding: ${spacings.s};
-  color: ${(props) => (props.active ? "#5dade2" : "#8b95a5")};
+  color: ${({ theme, active }) =>
+    active ? colors.colorBgHeader : theme.token.colorTextPrimary};
   text-decoration: none;
-  font-size: 14px;
+  font-size: ${fontSizes.m};
   font-weight: 400;
   transition: all 0.3s ease;
   cursor: pointer;
   border-bottom: 3px solid
-    ${(props) => (props.active ? "#5dade2" : "transparent")};
+    ${(props) => (props.active ? colors.colorBgHeader : "transparent")};
   white-space: nowrap;
   min-width: 100px;
 
   .anticon {
-    font-size: 20px;
+    font-size: ${fontSizes.xl};
     transition: transform 0.3s ease;
   }
 
   &:hover {
-    color: #5dade2;
+    color: ${colors.colorBgHeader};
     background: rgba(93, 173, 226, 0.05);
 
     .anticon {

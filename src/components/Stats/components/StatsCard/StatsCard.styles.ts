@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Card } from "antd";
-import { spacings } from "@styles/constants";
+import { fontSizes, spacings } from "@styles/constants";
 
 const StyledCard = styled(Card)<{ $color: string }>`
   background: ${({ $color }) => $color};
@@ -31,33 +31,20 @@ const StyledCard = styled(Card)<{ $color: string }>`
     height: 100%;
     gap: ${spacings.m};
 
-    h4 {
-      font-size: 13px;
-      text-transform: uppercase;
-      opacity: 0.9;
-      margin-bottom: 6px;
-    }
-
-    h2 {
-      font-size: 26px;
-      font-weight: 700;
-      margin: 0;
-    }
-
     .change {
       display: flex;
       align-items: center;
       gap: 6px;
 
       span {
-        font-size: 12px;
+        font-size: ${fontSizes.s};
         opacity: 0.8;
       }
 
       .ant-tag {
         font-weight: 600;
-        font-size: 11px;
-        border-radius: 6px;
+        font-size: ${fontSizes.s};
+        border-radius: ${spacings.borderRadius};
         margin: 0;
       }
     }
@@ -73,7 +60,7 @@ const StyledCard = styled(Card)<{ $color: string }>`
     justify-content: center;
 
     svg {
-      font-size: 20px;
+      font-size: ${fontSizes.xl};
       color: #fff;
     }
   }

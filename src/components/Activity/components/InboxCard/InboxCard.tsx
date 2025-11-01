@@ -1,5 +1,8 @@
 import Card from "@components/Card";
-import { Header, UserItem, Avatar, Time } from "./InboxCard.styles";
+import { UserItem, Time } from "./InboxCard.styles";
+
+import { Avatar } from "antd";
+import Title from "@components/Title";
 
 interface Message {
   id: number;
@@ -56,11 +59,11 @@ const mockMessages: Message[] = [
 export default function InboxCard() {
   return (
     <Card>
-      <Header>Inbox</Header>
+      <Title>Inbox</Title>
 
       {mockMessages.map((msg) => (
         <UserItem key={msg.id}>
-          <Avatar>{msg.name[0]}</Avatar>
+          <Avatar src="https://randomuser.me/api/portraits/women/44.jpg" />
           <div className="content">
             <div className="name">{msg.name}</div>
             <div className="message">{msg.message}</div>

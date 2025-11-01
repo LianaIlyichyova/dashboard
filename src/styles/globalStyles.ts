@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { fontSizes } from "./constants";
 
-const GlobalCSSReset = createGlobalStyle`
+const GlobalCSSStyles = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -12,27 +13,38 @@ const GlobalCSSReset = createGlobalStyle`
 
   
 
-  img {
-    display: block;
-    max-width: 100%;
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
   }
+
+  html, body, #root {
+  height: 100%;
+}
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: ${fontSizes.m};
+    line-height: 1.5;
+    color: ${({ theme }) => theme.token.colorTextPrimary};
+    background-color: ${({ theme }) => theme.token.colorBgBase || "#0f172a"};
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
 
   a {
     color: inherit;
     text-decoration: none;
   }
 
-  button {
-    background: none;
-    cursor: pointer;
-    border: none;
-    font: inherit;
-  }
-
-  ul,
-  li {
-    list-style: none;
-  }
 
   /* === Scrollbar Styles === */
   *::-webkit-scrollbar {
@@ -63,29 +75,15 @@ const GlobalCSSReset = createGlobalStyle`
       `${theme.token.scrollbarThumb || "rgba(0,0,0,0.2)"} transparent`};
   }
 
-  html {
-    scroll-behavior: smooth;
-    font-size: 62.5%; /* 1rem = 10px */
+  h1{
+    font-size: ${fontSizes.l};
+    font-weight: 500;
   }
 
-  html, body, #root {
-  height: 100%;
-}
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    font-size: 1.6rem; /* = 16px */
-    line-height: 1.5;
-    color: ${({ theme }) => theme.token.colorTextPrimary};
-    background-color: ${({ theme }) => theme.token.colorPrimaryBg || "#0f172a"};
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    h3{
+    font-size: ${fontSizes.m};
+    font-weight: 600;
   }
 `;
 
-export default GlobalCSSReset;
+export default GlobalCSSStyles;

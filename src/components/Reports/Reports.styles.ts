@@ -1,38 +1,22 @@
 import styled from "styled-components";
-import { colors, spacings } from "@styles/constants";
+import { colors, fontSizes, spacings } from "@styles/constants";
 
 export const Container = styled.div`
   display: grid;
   gap: ${spacings.l};
-  padding: ${spacings.l};
   grid-template-columns: 1fr 1fr;
+  font-size: ${fontSizes.m};
+  color: ${({ theme }) => theme.token.colorTextPrimary};
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
 
-export const Title = styled.h2`
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: ${spacings.m};
-  color: ${colors.colorTextTertiary};
-`;
-
-export const TableHeader = styled.div`
-  display: flex;
-  align-items: center;
-  padding: ${spacings.s} ${spacings.m};
-  background-color: ${colors.colorBgSecondary};
-  border-radius: ${spacings.borderRadius};
-  margin-bottom: ${spacings.s};
-`;
-
 export const HeaderCell = styled.div<{ width: string }>`
   width: ${(props) => props.width};
-  font-size: 13px;
-  font-weight: 600;
-  color: ${colors.colorTextTertiary};
+  font-size: ${fontSizes.s};
+  font-weight: 500;
   flex-shrink: 0;
 `;
 
@@ -69,35 +53,18 @@ export const StatusCell = styled(Cell)`
   align-items: center;
 `;
 
-export const UserName = styled.span`
-  font-size: 14px;
-  color: ${colors.colorTextTertiary};
-`;
-
-export const ProductName = styled.span`
-  font-size: 14px;
-  color: ${colors.colorTextTertiary};
-`;
+export const ProductName = styled.span``;
 
 export const OrderId = styled.span`
-  font-size: 13px;
-  color: ${colors.colorTextTertiary};
+  font-size: ${fontSizes.s};
 `;
 
 export const Amount = styled.div`
-  font-size: 14px;
   font-weight: 500;
-  color: ${colors.colorTextTertiary};
-`;
-
-export const Date = styled.div`
-  font-size: 14px;
-  color: ${colors.colorTextTertiary};
 `;
 
 export const Label = styled.div`
-  font-size: 12px;
-  color: ${colors.colorTextTertiary};
+  font-size: ${fontSizes.s};
 `;
 
 export const AmountInfo = styled.div`
@@ -107,16 +74,16 @@ export const AmountInfo = styled.div`
 `;
 
 export const EditButton = styled.button`
-  background: ${colors.colorTextTertiary};
-  color: ${colors.colorBgPrimary};
+  background: ${colors.colorTextSecondary};
+  color: ${colors.white};
   border: none;
-  padding: 0 ${spacings.m};
+  padding: ${spacings.s} ${spacings.l};
   border-radius: ${spacings.borderRadius};
-  font-size: 13px;
+  font-size: ${fontSizes.s};
   cursor: pointer;
   transition: background-color 0.2s;
 
   &:hover {
-    background: ${colors.colorTextTertiary};
+    background: ${colors.colorBgHeader};
   }
 `;

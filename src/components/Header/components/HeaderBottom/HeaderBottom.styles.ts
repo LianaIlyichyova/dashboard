@@ -3,7 +3,7 @@ import { spacings, colors } from "@styles/constants";
 
 const StyledHeaderBottom = styled.section`
   padding: ${spacings.m} ${spacings.xxl} 80px ${spacings.xxl};
-  background-color: ${colors.colorBgHeader};
+  background-color: ${colors.colorBgHeaderDark};
 
   display: flex;
   align-items: center;

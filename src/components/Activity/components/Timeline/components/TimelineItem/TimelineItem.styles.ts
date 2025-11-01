@@ -10,7 +10,7 @@ const StyledContent = styled.div`
 `;
 
 const StyledContainer = styled.div`
-  background-color: ${({ theme }) => theme.token.colorPrimaryBg};
+  background-color: ${({ theme }) => theme.token.colorBgBase};
 
   width: 100%;
   min-width: 100%;
@@ -33,7 +33,7 @@ const StyledContainer = styled.div`
     border-bottom: ${TRIANGLE_SIZE} solid transparent;
 
     border-right: ${TRIANGLE_SIZE} solid
-      ${({ theme }) => theme.token.colorPrimaryBg};
+      ${({ theme }) => theme.token.colorBgBase};
   }
 `;
 

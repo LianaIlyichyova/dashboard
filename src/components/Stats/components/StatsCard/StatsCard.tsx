@@ -1,6 +1,7 @@
 import { Tag } from "antd";
 
 import StyledCard from "./StatsCard.styles";
+import Title from "@components/Title";
 
 interface StatsCardProps {
   title: string;
@@ -26,8 +27,8 @@ export default function StatsCard({
     <StyledCard $color={color}>
       <div className="card-content">
         <div className="text-section">
-          <h4>{title}</h4>
-          <h2>{value}</h2>
+          <Title color="white">{title}</Title>
+          <p>{value}</p>
           <div className="change">
             <Tag color={tagColor}>{tagText}</Tag>
             <span>From previous period</span>

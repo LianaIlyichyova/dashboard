@@ -4,7 +4,7 @@ import { spacings } from "@styles/constants";
 const Container = styled.section`
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: ${spacings.l};
 

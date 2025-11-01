@@ -1,24 +1,22 @@
 import Card from "@components/Card";
 import {
-  Title,
   Row,
   Cell,
   Amount,
   EditButton,
   StatusCell,
   UserCell,
-  UserName,
-  Date,
 } from "@components/Reports/Reports.styles";
 
 import { Tag, Avatar } from "antd";
 
 import { mockTransactions } from "@components/Reports/mockData";
+import Title from "@components/Title";
 
 function Transactions() {
   return (
     <Card>
-      <Title>Latest Transactions</Title>
+      <Title color="light">Latest Transactions</Title>
       {mockTransactions.map((transaction) => (
         <Row key={transaction.id}>
           <UserCell width="35%">
@@ -28,7 +26,7 @@ function Transactions() {
               size={32}
               style={{ flexShrink: 0 }}
             />
-            <UserName>{transaction.name}</UserName>
+            <p>{transaction.name}</p>
           </UserCell>
           <StatusCell width="20%">
             <Tag color={transaction.statusColor}>{transaction.status}</Tag>
@@ -37,7 +35,7 @@ function Transactions() {
             <Amount>{transaction.amount}</Amount>
           </Cell>
           <Cell width="15%">
-            <Date>{transaction.date}</Date>
+            <p>{transaction.date}</p>
           </Cell>
           <Cell width="15%">
             <EditButton>Edit</EditButton>

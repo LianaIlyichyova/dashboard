@@ -1,8 +1,9 @@
 import Card from "@components/Card";
-import { Header } from "./Timeline.styles";
 
 import { Timeline as AntdTimeline } from "antd";
 import TimelineItem from "./components/TimelineItem";
+import Title from "@components/Title";
+import { spacings } from "@styles/constants";
 
 interface Activity {
   id: number;
@@ -24,8 +25,10 @@ const items = mockActivities.map((item) => ({
 
 function Timeline() {
   return (
-    <Card>
-      <Header>Recent Activity Feed</Header>
+    <Card
+      style={{ display: "flex", flexDirection: "column", gap: spacings.xl }}
+    >
+      <Title>Recent Activity Feed</Title>
 
       <AntdTimeline items={items} mode="left" />
     </Card>

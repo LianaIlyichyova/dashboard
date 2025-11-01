@@ -17,7 +17,7 @@ const mockData = {
 
 function Feedback() {
   return (
-    <Card style={{ padding: "0" }}>
+    <Card style={{ padding: "0", height: "max-content" }}>
       <StyledText>
         <CommentOutlined style={{ fontSize: "40px" }} />
         <p>{mockData.text}</p>

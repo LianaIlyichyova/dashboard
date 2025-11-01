@@ -1,5 +1,4 @@
 import Card from "@components/Card";
-
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -8,15 +7,14 @@ import {
   LinearScale,
   Tooltip,
 } from "chart.js";
-
 import {
-  Title,
   Value,
   Description,
   LearnMore,
   StyledChartContainer,
   StyledContainer,
 } from "./Sales.styles";
+import Title from "@components/Title";
 import { colors } from "@styles/constants";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
@@ -30,13 +28,13 @@ const mockData = {
 const options = {
   plugins: {
     legend: { display: false },
-    tooltip: { enabled: false },
+    tooltip: { enabled: true },
   },
   scales: {
     x: {
       display: false,
-      categoryPercentage: 0.9,
-      barPercentage: 0.9,
+      categoryPercentage: 0.8,
+      barPercentage: 0.8,
     },
     y: { display: false },
   },
@@ -46,25 +44,23 @@ const options = {
 
 function Sales() {
   const chartData = {
-    labels: mockData.chartData.map((_) => ``),
+    labels: mockData.chartData.map((_, i) => `Week ${i + 1}`),
     datasets: [
       {
         data: mockData.chartData,
-        backgroundColor: colors.colorHeaderBg,
-        barThickness: 15,
-        borderRadius: 0,
+        backgroundColor: colors.colorBgHeader,
+        borderRadius: 3,
       },
     ],
   };
 
   return (
-    <Card>
-      <Title>Yearly Sales</Title>
+    <Card style={{ height: "max-content" }}>
+      <Title color="light">Yearly Sales</Title>
       <StyledContainer>
         <div>
           <Value>{mockData.sales}</Value>
           <Description>{mockData.description}</Description>
-
           <LearnMore href="#">Learn more</LearnMore>
         </div>
         <StyledChartContainer>

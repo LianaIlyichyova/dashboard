@@ -4,7 +4,7 @@ import { colors, fontSizes, spacings } from "@styles/constants";
 const StyledText = styled.div`
   position: relative;
   text-align: center;
-  background-color: ${colors.colorHeaderBg};
+  background-color: ${colors.colorBgHeader};
   border-top-right-radius: ${spacings.borderRadius};
   border-top-left-radius: ${spacings.borderRadius};
   padding: ${spacings.l};
@@ -20,7 +20,7 @@ const StyledText = styled.div`
     height: 0;
     border-left: 15px solid transparent;
     border-right: 2px solid transparent;
-    border-top: 15px solid ${colors.colorHeaderBg};
+    border-top: 15px solid ${colors.colorBgHeader};
   }
 `;
 
@@ -32,11 +32,12 @@ const StyledInfo = styled.div`
 
 const StyledName = styled.p`
   font-weight: 600;
-  font-size: ${fontSizes.large};
+  font-size: ${fontSizes.m};
 `;
 
 const StyledRole = styled.p`
-  font-size: ${fontSizes.large};
+  font-size: ${fontSizes.m};
+  color: ${({ theme }) => theme.token.colorTextPrimary};
 `;
 
 export { StyledText, StyledInfo, StyledName, StyledRole };

@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
-import { Header, StatGrid } from "./ChartCard.styles";
+import { StatGrid } from "./ChartCard.styles";
 import Card from "@components/Card";
+import Title from "@components/Title";
 
 interface ChartCardProps {
   title: string;
@@ -21,9 +22,7 @@ function ChartCard({
 }: ChartCardProps) {
   return (
     <Card>
-      <Header>
-        <h4>{title}</h4>
-      </Header>
+      <Title>{title}</Title>
 
       <StatGrid $isTriple={isTripleStat}>
         <div className="stat-item">

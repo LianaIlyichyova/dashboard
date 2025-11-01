@@ -1,15 +1,15 @@
 const colors = {
-  colorHeaderBg: "#7A6FBE",
-  colorTextTertiary: "#ADB5BD",
+  colorBgHeader: "#7A6FBE",
+
   white: "#F7F9FA",
-  black: "black",
-  colorBgPrimary: "#1f2431",
+  black: "#2E2E2E",
+  colorBgBase: "#1f2431",
   colorBgSecondary: "#212936",
-  colorBgTertiary: "#495057",
-  colorLabelDark: "#94A3B8",
   colorBgCardDark: "#323a4e",
-  colorBgHeader: "#2e3648",
+  colorBgHeaderDark: "#2e3648",
   colorBgCardLight: "#E5E7EB",
+  colorTextSecondary: "#62686dbf",
+  colorTextSecondaryDark: "#d1d6dbbf",
 };
 
 export default colors;

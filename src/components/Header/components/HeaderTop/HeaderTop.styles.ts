@@ -1,12 +1,12 @@
 import styled, { keyframes } from "styled-components";
-import { colors, spacings } from "@styles/constants";
+import { colors, fontSizes, spacings } from "@styles/constants";
 
 import { Input } from "antd";
 
 const { Search } = Input;
 
 const StyledHeaderTop = styled.section`
-  background-color: ${colors.colorHeaderBg};
+  background-color: ${colors.colorBgHeader};
   padding: ${spacings.m} ${spacings.xxl};
 
   display: flex;
@@ -28,25 +28,28 @@ const Logo = styled.div`
   justify-content: center;
   font-weight: 700;
   color: #7a6ff0;
-  font-size: 18px;
+  font-size: ${fontSizes.l};
 `;
 
 const Title = styled.h1`
-  font-size: 20px;
+  font-size: ${fontSizes.xl};
   font-weight: 600;
   margin: 0;
   color: white;
 `;
 
 const StyledSearch = styled(Search)`
-  background-color: #ffffff1a;
+  background-color: #ffffff33;
   border-radius: 24px;
+  min-width: 200px;
+
   input {
     border-radius: 24px;
+    padding: ${spacings.s} ${spacings.m};
 
     &:focus {
       background-color: #ffffff1a;
-      border-color: white;
+      border-color: ${colors.colorTextSecondary};
     }
   }
   .ant-input-group-addon {
@@ -64,7 +67,7 @@ const StyledSearch = styled(Search)`
 
 const IconButton = styled.div`
   color: white;
-  font-size: 18px;
+  font-size: ${fontSizes.l};
   cursor: pointer;
   position: relative;
 
@@ -95,7 +98,7 @@ const MenuButton = styled.button`
   justify-content: center;
 
   &:hover {
-    color: ${colors.colorBgTertiary};
+    color: ${colors.colorTextSecondary};
     transform: scale(1.1);
   }
 

@@ -9,7 +9,7 @@ export const baseTokens: ThemeConfig = {
     },
     Breadcrumb: {
       colorText: colors.white,
-      linkColor: colors.colorTextTertiary,
+      linkColor: colors.colorTextSecondaryDark,
       linkHoverColor: colors.white,
       lastItemColor: colors.white,
       separatorColor: colors.white,

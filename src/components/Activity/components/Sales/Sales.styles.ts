@@ -1,36 +1,28 @@
 import { fontSizes, spacings } from "@styles/constants";
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
+const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: ${spacings.l};
   align-items: end;
 `;
 
-export const Title = styled.h3`
-  color: #b8bfd1;
-  font-size: ${fontSizes.large};
-  font-weight: 400;
+const Value = styled.div`
+  color: ${({ theme }) => theme.token.colorText};
+  font-size: ${fontSizes.xxl};
+  font-weight: 600;
 `;
 
-export const Value = styled.div`
-  color: #ffffff;
-  font-size: 48px;
-  font-weight: 700;
-`;
-
-export const Description = styled.p`
-  color: #8891aa;
-  font-size: ${fontSizes.metric};
+const Description = styled.p`
+  color: ${({ theme }) => theme.token.colorTextPrimary};
   line-height: 1.5;
   max-width: 250px;
   word-wrap: break-word;
 `;
 
-export const LearnMore = styled.a`
+const LearnMore = styled.a`
   color: #8891aa;
-  font-size: ${fontSizes.metric};
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -43,11 +35,13 @@ export const LearnMore = styled.a`
 
   &::after {
     content: "»";
-    font-size: ${fontSizes.metric};
+    font-size: ${fontSizes.m};
   }
 `;
 
-export const StyledChartContainer = styled.div`
+const StyledChartContainer = styled.div`
   width: 200px;
   height: 80px;
 `;
+
+export { StyledChartContainer, LearnMore, Description, Value, StyledContainer };
